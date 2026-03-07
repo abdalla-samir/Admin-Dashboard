@@ -1,0 +1,26 @@
+import { useState } from "react";
+import Search from "../assets/icons/search.svg?react";
+import { useContext } from "react";
+import ActiveLinkContext from "../contexts/PageLabelContext";
+
+export default function DashboardHeader() {
+    const [searchInput, setSearchInput] = useState("");
+    const [activeLink] = useContext(ActiveLinkContext);
+    return (
+        <div className="flex items-center gap-4 flex-wrap max-sm:flex-col max-sm:justify-center mb-5">
+            <span className="text-primary text-heading-large sm:w-55 inline-block">
+                {activeLink}
+            </span>
+            <label className="w-fit inline-flex items-center justify-between bg-white border border-border py-2 px-4 rounded-full text-body-medium max-sm:w-full">
+                <input
+                    value={searchInput}
+                    onChange={(event) => setSearchInput(event.target.value)}
+                    type="search"
+                    className="w-3xs outline-none placeholder:text-text-light"
+                    placeholder="Search anything here..."
+                />
+                <Search className="ml-2" />
+            </label>
+        </div>
+    );
+}
