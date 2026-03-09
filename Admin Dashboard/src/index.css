@@ -18,7 +18,7 @@
     --color-text-light: #89868d;
     --color-text-disable: #b4b2b7;
     --color-success: #2dccff;
-
+    --color-danger: #f93131;
     --font-size-display-large: 32px;
     --font-size-display-medium: 30px;
     --font-size-display-small: 28px;
@@ -104,5 +104,11 @@
     }
     .input-label {
         @apply font-medium text-text;
+    }
+    .table-cell {
+        @apply p-4 text-text-light;
+    }
+    .table-head-cell {
+        @apply p-4 border-b border-border text-text text-left;
     }
 }

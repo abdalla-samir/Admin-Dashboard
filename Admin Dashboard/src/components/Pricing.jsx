@@ -11,7 +11,7 @@ export default function Pricing({ pricingInputs, setPricingInputs }) {
                             price: event.target.value,
                         }))
                     }
-                    name="facebookAccount"
+                    name="price"
                     type="text"
                     required
                     className="input"
@@ -20,7 +20,7 @@ export default function Pricing({ pricingInputs, setPricingInputs }) {
             </label>
             <label className="input-label text-body-medium">
                 Currency
-                <input
+                <select
                     value={pricingInputs.currency}
                     onChange={(event) =>
                         setPricingInputs((prev) => ({
@@ -28,12 +28,20 @@ export default function Pricing({ pricingInputs, setPricingInputs }) {
                             currency: event.target.value,
                         }))
                     }
-                    name="instagramAccount"
-                    type="text"
+                    name="currency"
                     required
                     className="input"
-                    placeholder="USD"
-                />
+                >
+                    <option value="">Select Currency</option>
+                    <option value="USD">USD - US Dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="GBP">GBP - British Pound</option>
+                    <option value="EGP">EGP - Egyptian Pound</option>
+                    <option value="SAR">SAR - Saudi Riyal</option>
+                    <option value="AED">AED - UAE Dirham</option>
+                    <option value="JPY">JPY - Japanese Yen</option>
+                    <option value="CNY">CNY - Chinese Yuan</option>
+                </select>
             </label>
             <label className="input-label text-body-medium">
                 SKU
@@ -45,7 +53,7 @@ export default function Pricing({ pricingInputs, setPricingInputs }) {
                             sku: event.target.value,
                         }))
                     }
-                    name="linkedinAccount"
+                    name="sku"
                     type="text"
                     required
                     className="input"
@@ -54,20 +62,14 @@ export default function Pricing({ pricingInputs, setPricingInputs }) {
             </label>
             <label className="input-label text-body-medium">
                 Tags
-                <input
-                    value={pricingInputs.tags}
-                    onChange={(event) =>
-                        setPricingInputs((prev) => ({
-                            ...prev,
-                            tags: event.target.value,
-                        }))
-                    }
-                    name="dribbleAccount"
-                    type="text"
-                    required
+                <select
+                    name="tags"
                     className="input"
-                    placeholder="In stock"
-                />
+                    onChange={(event) => setPricingInputs(event.target.value)}
+                >
+                    <option value="In Stock">In Stock</option>
+                    <option value="Out Of Stock">Out Of Stock</option>
+                </select>
             </label>
         </>
     );

@@ -1,6 +1,4 @@
 import { useState } from "react";
-import Google from "../assets/icons/Google.svg";
-import Facebook from "../assets/icons/Facebook.svg";
 
 export default function Login() {
     const [inputs, setInputs] = useState({

@@ -20,6 +20,7 @@ export default function ProductInfo({
                     type="text"
                     required
                     className="input"
+                    placeholder="Enter your name"
                 />
             </label>
             <label className="input-label text-body-medium">
@@ -31,6 +32,7 @@ export default function ProductInfo({
                     type="text"
                     required
                     className="input"
+                    placeholder="Enter weight"
                 />
             </label>
             <label className="input-label text-body-medium ">
@@ -75,6 +77,18 @@ export default function ProductInfo({
                 </select>
             </label>
             <label className="input-label text-body-medium">
+                Quantity
+                <input
+                    name="quantity"
+                    value={productInfoInputs.quantity}
+                    onChange={handleChange}
+                    type="text"
+                    required
+                    className="input"
+                    placeholder="Enter quantity"
+                />
+            </label>
+            <label className="input-label text-body-medium">
                 Description
                 <input
                     name="description"
@@ -83,6 +97,7 @@ export default function ProductInfo({
                     type="text"
                     required
                     className="input"
+                    placeholder="Enter description"
                 />
             </label>
         </>

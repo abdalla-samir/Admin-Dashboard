@@ -6,7 +6,8 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import PricingPage from "./components/PricingPage";
 import Setting from "./components/Setting";
-import NewProduct from "./components/NewProduct";
+import ProductList from "./components/ProductList";
+import ManageProduct from "./components/ManageProduct";
 
 function App() {
     return (
@@ -16,7 +17,12 @@ function App() {
                     <Route path="/" element={<Dashboard />} />
                     <Route path="/pricing-page" element={<PricingPage />} />
                     <Route path="/setting" element={<Setting />} />
-                    <Route path="/new-product" element={<NewProduct />} />
+                    <Route path="/new-product" element={<ManageProduct />} />
+                    <Route path="/product-list" element={<ProductList />} />
+                    <Route
+                        path="/edit-product/:id"
+                        element={<ManageProduct />}
+                    />
                 </Route>
             </Routes>
         </>

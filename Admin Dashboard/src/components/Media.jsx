@@ -15,7 +15,7 @@ export default function Media({ fileHandler, setFileHandler }) {
         <>
             {!fileHandler && (
                 <label
-                    className={`border-2 border-dashed border-primary  w-full h-50 mt-4 flex justify-center items-center cursor-pointer ${fileHandler ? "hidden" : ""}`}
+                    className={`border-2 border-dashed border-primary  w-full h-50 my-4 flex justify-center items-center cursor-pointer ${fileHandler ? "hidden" : ""}`}
                 >
                     <div className="flex flex-col gap-2 justify-center items-center">
                         <DownloadIcon width={50} />
