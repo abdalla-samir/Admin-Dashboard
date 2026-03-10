@@ -19,6 +19,7 @@ export default function SideBar() {
     );
     // const [showToggleMenu, setShowToggleMenu] = useState(null);
     const menuList = menu.map((item) => (
+        // console.log(item.path),
         <MenuItem
             key={item.id}
             item={item}
@@ -29,6 +30,7 @@ export default function SideBar() {
             showSideBar={showSideBar}
             setShowSideBar={setShowSideBar}
             setPageLabel={setPageLabel}
+            level={0}
         />
     ));
     useEffect(() => {
@@ -50,27 +52,29 @@ export default function SideBar() {
         };
     }, []);
     return (
-        <div
-            className={`bg-neutral p-2 flex flex-col transition max-md:fixed h-screen shadow`}
-        >
-            <button
-                onClick={() => setShowSideBar((prev) => !prev)}
-                className={`cursor-pointer block ml-auto mt-4 p-2 bg-primary-300 hover:bg-primary-400 transition rounded text-primary hover:text-primary-hover ${!showToggleMenu ? "hidden" : ""}`}
-            >
-                {!showSideBar ? <MenuBar /> : <Cross />}
-            </button>
-            <Link to="/" className="block w-fit mx-auto mt-4 mb-12">
-                <img
-                    src={Logo}
-                    alt="logo"
-                    className={`${!showSideBar && "hidden"}`}
-                />
-            </Link>
-            <ul
-                className={`px-3 flex-1 text-body-medium overflow-scroll text-text ${!showSideBar && "hidden"}`}
-            >
-                {menuList}
-            </ul>
-        </div>
+        <>
+            <div className="bg-neutral shadow flex flex-col">
+                <button
+                    onClick={() => {
+                        setShowSideBar((prev) => !prev);
+                    }}
+                    className={`cursor-pointer  bg-primary-300 hover:bg-primary-400 mt-6 mx-2 w-8 h-8 flex items-center justify-center  transition rounded text-primary hover:text-primary-hover ${!showToggleMenu && "hidden"}`}
+                >
+                    {!showSideBar ? <MenuBar /> : <Cross />}
+                </button>
+                <div
+                    className={` flex flex-col flex-1 transition h-4/5 transform ${showSideBar ? "translate-x-0 relative" : "-translate-x-full absolute"}`}
+                >
+                    <Link to="/" className="block w-fit mx-auto mt-6 mb-12">
+                        <img src={Logo} alt="logo" className={``} />
+                    </Link>
+                    <ul
+                        className={`px-2 flex-1 text-body-medium overflow-scroll text-text`}
+                    >
+                        {menuList}
+                    </ul>
+                </div>
+            </div>
+        </>
     );
 }

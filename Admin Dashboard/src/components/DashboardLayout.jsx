@@ -10,7 +10,7 @@ export default function DashboardLayout() {
         <PageLabelContext.Provider value={[pageLabel, setPageLabel]}>
             <div className="flex max-h-screen h-screen">
                 <SideBar />
-                <div className="flex-1 flex flex-col bg-surface max-h-screen overflow-scroll max-md:ml-12.5 p-4 ">
+                <div className="flex-1 flex flex-col bg-surface overflow-scroll p-4 ">
                     <DashboardHeader />
                     <Outlet />
                 </div>

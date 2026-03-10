@@ -14,7 +14,7 @@ function App() {
         <>
             <Routes>
                 <Route element={<DashboardLayout />}>
-                    <Route path="/" element={<Dashboard />} />
+                    <Route path="/profile/overview" element={<Dashboard />} />
                     <Route path="/pricing-page" element={<PricingPage />} />
                     <Route path="/setting" element={<Setting />} />
                     <Route path="/products/new" element={<ManageProduct />} />
