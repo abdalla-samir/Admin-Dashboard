@@ -29,10 +29,11 @@ export default function Pricing({ pricingInputs, setPricingInputs }) {
                         }))
                     }
                     name="currency"
-                    required
                     className="input"
                 >
-                    <option value="">Select Currency</option>
+                    <option value="" disabled>
+                        Select Currency
+                    </option>
                     <option value="USD">USD - US Dollar</option>
                     <option value="EUR">EUR - Euro</option>
                     <option value="GBP">GBP - British Pound</option>
@@ -65,8 +66,17 @@ export default function Pricing({ pricingInputs, setPricingInputs }) {
                 <select
                     name="tags"
                     className="input"
-                    onChange={(event) => setPricingInputs(event.target.value)}
+                    value={pricingInputs.tags}
+                    onChange={(event) =>
+                        setPricingInputs((prev) => ({
+                            ...prev,
+                            tags: event.target.value,
+                        }))
+                    }
                 >
+                    <option value="" disabled>
+                        Select Tags
+                    </option>
                     <option value="In Stock">In Stock</option>
                     <option value="Out Of Stock">Out Of Stock</option>
                 </select>

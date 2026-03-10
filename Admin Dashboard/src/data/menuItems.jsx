@@ -101,7 +101,6 @@ export const menu = [
                 label: "Products",
                 children: [
                     { id: "newProduct", label: "New Product" },
-                    { id: "editProduct", label: "Edit Product" },
                     { id: "productList", label: "Product List" },
                 ],
             },

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import ProductInfo from "./ProductInfo";
-import Media from "./Media";
 import Social from "./Social";
 import Pricing from "./Pricing";
 import { useParams } from "react-router-dom";
@@ -16,7 +15,7 @@ export default function ManageProduct() {
 
     const [steps, setSteps] = useState(1);
     const [showMessage, setShowMessage] = useState(false);
-    const [showAlert, setShowAlert] = useState(false);
+    const [showAlert, setShowAlert] = useState({ alert: false, message: "" });
     const initialProductInfo = {
         name: "",
         weight: "",
@@ -73,15 +72,27 @@ export default function ManageProduct() {
               }
             : initialSocialInputs,
     );
-    const [fileHandler, setFileHandler] = useState("");
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (steps === 2 && !fileHandler) {
-            setShowAlert(true);
-            setTimeout(() => setShowAlert(false), 2000);
-            return;
+        if (steps === 1) {
+            if (!productInfoInputs.sizes) {
+                setShowAlert({ alert: true, message: "Please Enter The Size" });
+                setTimeout(() => {
+                    setShowAlert({ alert: false, message: "" });
+                }, 1500);
+                return;
+            } else if (!productInfoInputs.category) {
+                setShowAlert({
+                    alert: true,
+                    message: "Please Enter The Category",
+                });
+                setTimeout(() => {
+                    setShowAlert({ alert: false, message: "" });
+                }, 1500);
+                return;
+            }
         }
-        if (steps < 4) setSteps((prev) => prev + 1);
+        if (steps < 3) setSteps((prev) => prev + 1);
     };
     const handleProduct = (event) => {
         event.preventDefault();
@@ -114,7 +125,6 @@ export default function ManageProduct() {
             setProductInfoInputs(initialProductInfo);
             setPricingInputs(initialPricingInputs);
             setSocialInputs(initialSocialInputs);
-            setFileHandler("");
         }
         setSteps(1);
         setShowMessage(true);
@@ -138,6 +148,7 @@ export default function ManageProduct() {
                         Product Info
                     </span>
                 </div>
+
                 <div className="line"></div>
                 <div className={`${steps === 2 ? "block" : "max-lg:hidden"}`}>
                     <span
@@ -148,7 +159,7 @@ export default function ManageProduct() {
                     <span
                         className={`${steps === 2 ? "text-primary" : "text-primary-200"} text-heading-medium`}
                     >
-                        Media
+                        Social
                     </span>
                 </div>
                 <div className="line"></div>
@@ -160,19 +171,6 @@ export default function ManageProduct() {
                     </span>
                     <span
                         className={`${steps === 3 ? "text-primary" : "text-primary-200"} text-heading-medium`}
-                    >
-                        Social
-                    </span>
-                </div>
-                <div className="line"></div>
-                <div className={`${steps === 4 ? "block" : "max-lg:hidden"}`}>
-                    <span
-                        className={`${steps === 4 ? "bg-primary" : "bg-primary-200"} text-title-medium mr-2 w-8 h-8 inline-flex justify-center items-center text-white rounded-full`}
-                    >
-                        4
-                    </span>
-                    <span
-                        className={`${steps === 4 ? "text-primary" : "text-primary-200"} text-heading-medium`}
                     >
                         Pricing
                     </span>
@@ -200,18 +198,12 @@ export default function ManageProduct() {
                                 />
                             )}
                             {steps === 2 && (
-                                <Media
-                                    fileHandler={fileHandler}
-                                    setFileHandler={setFileHandler}
-                                />
-                            )}
-                            {steps === 3 && (
                                 <Social
                                     socialInputs={socialInputs}
                                     setSocialInputs={setSocialInputs}
                                 />
                             )}
-                            {steps === 4 && (
+                            {steps === 3 && (
                                 <Pricing
                                     pricingInputs={pricingInputs}
                                     setPricingInputs={setPricingInputs}
@@ -232,7 +224,7 @@ export default function ManageProduct() {
                             >
                                 Back
                             </button>
-                            {steps === 4 && (
+                            {steps === 3 && (
                                 <button
                                     type="button"
                                     className="btn block w-fit"
@@ -241,7 +233,7 @@ export default function ManageProduct() {
                                     {isEdit ? "Edit" : "Create Product"}
                                 </button>
                             )}
-                            {steps < 4 && (
+                            {steps < 3 && (
                                 <button className="btn block w-fit">
                                     Next
                                 </button>
@@ -257,9 +249,9 @@ export default function ManageProduct() {
                         : "Product Created Successfully"}
                 </div>
             )}
-            {showAlert && (
+            {showAlert.alert && (
                 <div className="bg-neutral border w-90 p-5 border-primary fixed right-5 bottom-5 rounded">
-                    Please upload the media
+                    {showAlert.message}
                 </div>
             )}
         </>

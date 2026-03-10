@@ -17,10 +17,10 @@ function App() {
                     <Route path="/" element={<Dashboard />} />
                     <Route path="/pricing-page" element={<PricingPage />} />
                     <Route path="/setting" element={<Setting />} />
-                    <Route path="/new-product" element={<ManageProduct />} />
+                    <Route path="/products/new" element={<ManageProduct />} />
                     <Route path="/product-list" element={<ProductList />} />
                     <Route
-                        path="/edit-product/:id"
+                        path="/products/:id/edit"
                         element={<ManageProduct />}
                     />
                 </Route>

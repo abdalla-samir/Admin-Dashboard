@@ -13,7 +13,6 @@ export default function Social({ socialInputs, setSocialInputs }) {
                     }
                     name="facebook-account"
                     type="text"
-                    required
                     className="input"
                     placeholder="@warner"
                 />
@@ -30,7 +29,6 @@ export default function Social({ socialInputs, setSocialInputs }) {
                     }
                     name="instagram-account"
                     type="text"
-                    required
                     className="input"
                     placeholder="@warner"
                 />
@@ -47,7 +45,6 @@ export default function Social({ socialInputs, setSocialInputs }) {
                     }
                     name="linkedin-account"
                     type="text"
-                    required
                     className="input"
                     placeholder="@warner"
                 />
@@ -64,7 +61,6 @@ export default function Social({ socialInputs, setSocialInputs }) {
                     }
                     name="dribble-account"
                     type="text"
-                    required
                     className="input"
                     placeholder="@warner"
                 />
@@ -81,7 +77,6 @@ export default function Social({ socialInputs, setSocialInputs }) {
                     }
                     name="behance-account"
                     type="text"
-                    required
                     className="input"
                     placeholder="@warner"
                 />
@@ -98,7 +93,6 @@ export default function Social({ socialInputs, setSocialInputs }) {
                     }
                     name="ui8-account"
                     type="text"
-                    required
                     className="input"
                     placeholder="@warner"
                 />
