@@ -53,19 +53,19 @@ export default function SideBar() {
     }, []);
     return (
         <>
-            <div className="bg-neutral shadow flex flex-col">
+            <div className="bg-neutral shadow flex flex-col z-50">
                 <button
                     onClick={() => {
                         setShowSideBar((prev) => !prev);
                     }}
-                    className={`cursor-pointer  bg-primary-300 hover:bg-primary-400 mt-6 mx-2 w-8 h-8 flex items-center justify-center  transition rounded text-primary hover:text-primary-hover ${!showToggleMenu && "hidden"}`}
+                    className={`cursor-pointer z-50 bg-primary-300 hover:bg-primary-400 mt-6 mx-2 w-8 h-8 flex items-center justify-center  transition rounded text-primary hover:text-primary-hover ${!showToggleMenu && "hidden"}`}
                 >
                     {!showSideBar ? <MenuBar /> : <Cross />}
                 </button>
                 <div
-                    className={` flex flex-col flex-1 transition h-4/5 transform ${showSideBar ? "translate-x-0 relative" : "-translate-x-full absolute"}`}
+                    className={` bg-neutral shadow fixed md:static h-screen flex flex-col flex-1 transition ease-in-out transform ${showSideBar ? "translate-x-0 " : "-translate-x-full"}`}
                 >
-                    <Link to="/" className="block w-fit mx-auto mt-6 mb-12">
+                    <Link to="/" className="block w-fit mx-auto mt-10 mb-12">
                         <img src={Logo} alt="logo" className={``} />
                     </Link>
                     <ul
@@ -75,6 +75,12 @@ export default function SideBar() {
                     </ul>
                 </div>
             </div>
+            {showSideBar && (
+                <div
+                    className="absolute top-0 left-0 w-full  h-full bg-black opacity-30 md:hidden"
+                    onClick={() => setShowSideBar(false)}
+                ></div>
+            )}
         </>
     );
 }
