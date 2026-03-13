@@ -12,7 +12,6 @@ import { salesFunnelData } from "../../../data/salesFunnelData";
 const tooltipStyle = {
     backgroundColor: "#533fe4",
     borderRadius: "5px",
-    // overflow: "hidden",
 };
 
 export default function SalesFunnelChart() {
@@ -64,7 +63,6 @@ export default function SalesFunnelChart() {
                             style={{ fontSize: "14px" }}
                         />
                         <Tooltip
-                            // formatter={(value) => [value.toUpperCase(), ""]}
                             content={(props) => {
                                 const { active, payload } = props;
                                 if (active && payload && payload.length) {
@@ -79,7 +77,6 @@ export default function SalesFunnelChart() {
                                             }}
                                         >
                                             {payload[0].value}{" "}
-                                            {/* only the number */}
                                         </div>
                                     );
                                 }
