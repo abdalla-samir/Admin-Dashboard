@@ -2,10 +2,16 @@ import { Outlet } from "react-router-dom";
 import SideBar from "./SideBar";
 import DashboardHeader from "./DashboardHeader";
 import PageLabelContext from "../contexts/PageLabelContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function DashboardLayout() {
-    const [pageLabel, setPageLabel] = useState("Dashboard");
+    const [pageLabel, setPageLabel] = useState(() => {
+        const label = window.localStorage.getItem("label");
+        return label ? label : "Dashboard";
+    });
+    useEffect(() => {
+        window.localStorage.setItem("label", pageLabel);
+    }, [pageLabel]);
     return (
         <PageLabelContext.Provider value={[pageLabel, setPageLabel]}>
             <div className="flex max-h-screen h-screen">

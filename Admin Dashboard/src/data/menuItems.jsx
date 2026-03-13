@@ -192,6 +192,31 @@ export const menu = [
                     },
                 ],
             },
+            {
+                id: "orders",
+                label: "Orders",
+                root: false,
+                parent: true,
+                child: false,
+                children: [
+                    {
+                        id: "orderList",
+                        label: "Order List",
+                        path: "/e-commerce/orders/order-list",
+                        root: false,
+                        parent: false,
+                        leaf: true,
+                    },
+                    {
+                        id: "orderDetail",
+                        label: "Order Detail",
+                        path: "/e-commerce/orders/order-detail",
+                        root: false,
+                        parent: false,
+                        leaf: true,
+                    },
+                ],
+            },
         ],
     },
     {

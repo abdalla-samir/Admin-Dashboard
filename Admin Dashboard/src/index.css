@@ -10,6 +10,7 @@
     --color-primary-200: #d3bbfe;
     --color-primary-100: #deccfe;
     --color-primary-hover: #612cbd;
+    --color-secondary: #533fe4;
     --color-neutral: #ffffff;
     --color-surface: #f4f5f9;
     --color-surface-muted: #e7e7f4;
@@ -105,7 +106,7 @@
     .input-label {
         @apply font-medium text-text;
     }
-    .table-cell {
+    .table-data-cell {
         @apply p-4 text-text-light;
     }
     .table-head-cell {

@@ -8,15 +8,27 @@ import PageLabelContext from "../contexts/PageLabelContext";
 import { menu } from "../data/menuItems";
 
 export default function SideBar() {
-    const [activeLink, setActiveLink] = useState("dashboard");
+    const [activeLink, setActiveLink] = useState(() => {
+        const activeLink = window.localStorage.getItem("activeLink");
+        return activeLink ? activeLink : "dashboard";
+    });
     const [, setPageLabel] = useContext(PageLabelContext);
-    const [openMenus, setOpenMenus] = useState([]);
+    const [openMenus, setOpenMenus] = useState(() => {
+        const menuList = window.localStorage.getItem("openMenus");
+        return menuList ? JSON.parse(menuList) : [];
+    });
     const [showToggleMenu, setShowToggleMenu] = useState(
         () => window.matchMedia("(max-width: 768px)").matches,
     );
     const [showSideBar, setShowSideBar] = useState(
         () => window.matchMedia("(min-width: 768px)").matches,
     );
+    useEffect(() => {
+        window.localStorage.setItem("activeLink", activeLink);
+    }, [activeLink]);
+    useEffect(() => {
+        window.localStorage.setItem("openMenus", JSON.stringify(openMenus));
+    }, [openMenus]);
     // const [showToggleMenu, setShowToggleMenu] = useState(null);
     const menuList = menu.map((item) => (
         // console.log(item.path),
@@ -34,21 +46,15 @@ export default function SideBar() {
         />
     ));
     useEffect(() => {
-        const showSideBarMediaQuery = window.matchMedia("(min-width: 768px)");
-        const showToggleMenuMediaQuery =
-            window.matchMedia("(max-width: 768px)");
-        function handleResize() {
-            setShowSideBar(showSideBarMediaQuery.matches);
-            setShowToggleMenu(showToggleMenuMediaQuery.matches);
+        const mediaQuery = window.matchMedia("(min-width: 768px)");
+        function handleResize(event) {
+            setShowSideBar(event.matches);
+            setShowToggleMenu(!event.matches);
         }
-        showSideBarMediaQuery.addEventListener("change", handleResize);
-        showToggleMenuMediaQuery.addEventListener("change", handleResize);
+        handleResize(mediaQuery);
+        mediaQuery.addEventListener("change", handleResize);
         return () => {
-            showSideBarMediaQuery.removeEventListener("change", handleResize);
-            showToggleMenuMediaQuery.removeEventListener(
-                "change",
-                handleResize,
-            );
+            mediaQuery.removeEventListener("change", handleResize);
         };
     }, []);
     return (

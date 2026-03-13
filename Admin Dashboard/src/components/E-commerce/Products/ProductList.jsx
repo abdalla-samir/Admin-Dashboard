@@ -5,7 +5,6 @@ export default function ProductList() {
     const navigate = useNavigate();
     const [products] = useProduct();
     const productsArray = products.map((product) => {
-        console.log(product.tags);
         return (
             <tr key={product.id} className="not-last:border-b border-border">
                 <td className="table-cell text-body-medium">{product.name}</td>
@@ -27,7 +26,9 @@ export default function ProductList() {
                 <td className="table-cell text-body-medium">
                     <button
                         className="cursor-pointer"
-                        onClick={() => navigate(`/products/${product.id}/edit`)}
+                        onClick={() =>
+                            navigate(`/e-commerce/products/${product.id}/edit`)
+                        }
                     >
                         Edit
                     </button>
