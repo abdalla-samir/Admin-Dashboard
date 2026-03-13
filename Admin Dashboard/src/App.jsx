@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import DashboardLayout from "/src/components/DashboardLayout";
 import Dashboard from "/src/components/Home/Dashboard";
-import Analytics from "/src/components/Home/Analytics";
+import Analytics from "/src/components/Home/Analytics/Analytics";
 import ForgetPassword from "/src/components/Auth/ForgetPassword";
 import Login from "/src/components/Auth/Login";
 import SignUp from "/src/components/Auth/SignUp";
@@ -90,7 +90,7 @@ function App() {
                         element={<OrderList />}
                     />
                     <Route
-                        path="/e-commerce/orders/order-detail"
+                        path="/e-commerce/orders/:id/edit"
                         element={<OrderDetails />}
                     />
                 </Route>

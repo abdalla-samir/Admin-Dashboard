@@ -1,11 +1,10 @@
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useOrder from "../../../hooks/useOrder";
 
 export default function OrderList() {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const [orders] = useOrder();
     const ordersArray = orders.map((order) => {
-        // const [orders] = useProduct();
         return (
             <tr key={order.id} className="not-last:border-b border-border">
                 <td className="table-data-cell text-body-medium">
@@ -32,16 +31,16 @@ export default function OrderList() {
                 <td className="table-data-cell text-body-medium">
                     {order.date}
                 </td>
-                {/* <td className="table-data-cell text-body-medium">
+                <td className="table-data-cell text-body-medium">
                     <button
                         className="cursor-pointer"
                         onClick={() =>
                             navigate(`/e-commerce/orders/${order.id}/edit`)
                         }
                     >
-                        Edit
+                        View Details
                     </button>
-                </td> */}
+                </td>
             </tr>
         );
     });
@@ -68,9 +67,9 @@ export default function OrderList() {
                         <th className="table-head-cell text-title-medium">
                             Date
                         </th>
-                        {/* <th className="table-head-cell text-title-medium">
-                            Edit
-                        </th> */}
+                        <th className="table-head-cell text-title-medium">
+                            Details
+                        </th>
                     </tr>
                 </thead>
                 <tbody>{ordersArray}</tbody>

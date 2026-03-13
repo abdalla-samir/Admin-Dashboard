@@ -91,6 +91,7 @@ export const menu = [
                     },
                 ],
             },
+
             {
                 id: "pricingPage",
                 label: "Pricing Page",
@@ -203,14 +204,6 @@ export const menu = [
                         id: "orderList",
                         label: "Order List",
                         path: "/e-commerce/orders/order-list",
-                        root: false,
-                        parent: false,
-                        leaf: true,
-                    },
-                    {
-                        id: "orderDetail",
-                        label: "Order Detail",
-                        path: "/e-commerce/orders/order-detail",
                         root: false,
                         parent: false,
                         leaf: true,
