@@ -83,7 +83,7 @@ export default function SideBar() {
             </div>
             {showSideBar && (
                 <div
-                    className="absolute top-0 left-0 w-full  h-full bg-black opacity-30 md:hidden"
+                    className="absolute top-0 left-0 w-full z-30 h-full bg-black opacity-30 md:hidden"
                     onClick={() => setShowSideBar(false)}
                 ></div>
             )}
