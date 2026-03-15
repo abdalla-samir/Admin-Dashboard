@@ -1,0 +1,18 @@
+export const salesFunnelData = [
+    { day: 10, Sales: 42000 },
+    { day: 11, Sales: 42000 },
+    { day: 12, Sales: 62000 },
+    { day: 13, Sales: 43000 },
+    { day: 14, Sales: 55000 },
+    { day: 15, Sales: 53000 },
+    { day: 16, Sales: 82000 },
+    { day: 17, Sales: 80234 },
+    { day: 18, Sales: 45000 },
+    { day: 19, Sales: 50000 },
+    { day: 20, Sales: 68000 },
+    { day: 21, Sales: 65000 },
+    { day: 22, Sales: 48000 },
+    { day: 23, Sales: 61000 },
+    { day: 24, Sales: 50000 },
+    { day: 25, Sales: 58000 },
+];
