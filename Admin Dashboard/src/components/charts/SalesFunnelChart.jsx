@@ -3,22 +3,19 @@ import {
     YAxis,
     CartesianGrid,
     Tooltip,
-    Legend,
     ResponsiveContainer,
     AreaChart,
     Area,
-    Line,
-    LineChart,
 } from "recharts";
-import { watchlistData } from "../../../data/watchlistData";
+import { salesFunnelData } from "../../data/salesFunnelData";
 
-export default function WatchList() {
+export default function SalesFunnelChart() {
     return (
         <>
             <div className="my-4">
                 <ResponsiveContainer width="100%" height={300}>
-                    <LineChart
-                        data={watchlistData}
+                    <AreaChart
+                        data={salesFunnelData}
                         margin={{ top: 20, right: 35, bottom: 20, left: 20 }}
                     >
                         <defs>
@@ -46,13 +43,15 @@ export default function WatchList() {
                             vertical={false}
                         />
                         <XAxis
-                            dataKey="date"
+                            dataKey="day"
                             axisLine={false}
                             tickLine={false}
                             tickMargin={20}
                             style={{ fontSize: "14px", fill: "#B4B2B7" }}
                         />
                         <YAxis
+                            tickFormatter={(value) => `${value / 1000}K`}
+                            domain={[20000, 100000]}
                             axisLine={false}
                             tickLine={false}
                             tickMargin={20}
@@ -96,19 +95,15 @@ export default function WatchList() {
                                 return null;
                             }}
                         />
-                        <Line
-                            type="monotone"
-                            dataKey="watchlistA"
-                            stroke="#2ac670"
-                            strokeWidth={3}
+                        <Area
+                            type="linear"
+                            dataKey="Sales"
+                            stroke="#6e39cb"
+                            strokeWidth={2}
+                            fill="url(#salesGradient)"
+                            fillOpacity={0.3}
                         />
-                        <Line
-                            type="monotone"
-                            dataKey="watchlistB"
-                            stroke="#fdad15"
-                            strokeWidth={3}
-                        />
-                    </LineChart>
+                    </AreaChart>
                 </ResponsiveContainer>
             </div>
         </>

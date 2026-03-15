@@ -1,34 +1,34 @@
 import { Routes, Route } from "react-router-dom";
 import DashboardLayout from "/src/components/DashboardLayout";
-import Dashboard from "/src/components/Home/Dashboard";
-import Analytics from "/src/components/Home/Analytics/Analytics";
-import ForgetPassword from "/src/components/Auth/ForgetPassword";
-import Login from "/src/components/Auth/Login";
-import SignUp from "/src/components/Auth/SignUp";
-import PricingPage from "/src/components/Pages/PricingPage";
-import Setting from "/src/components/Pages/Account/Setting";
-import ProductList from "/src/components/E-commerce/Products/ProductList";
-import ManageProduct from "/src/components/E-commerce/Products/ManageProduct";
-import ProfileOverview from "/src/components/Pages/Profile/ProfileOverview";
-import Teams from "/src/components/Pages/Profile/Teams";
-import AllProjects from "/src/components/Pages/Profile/AllProjects";
-import Reports from "/src/components/Pages/User/Reports";
-import NewUser from "/src/components/Pages/User/NewUser";
-import Charts from "/src/components/Pages/Charts";
+import Dashboard from "/src/components/home/dashboard/Dashboard";
+import Analytics from "/src/components/home/analytics/Analytics";
+import ForgetPassword from "/src/components/auth/ForgetPassword";
+import Login from "/src/components/auth/Login";
+import SignUp from "/src/components/auth/SignUp";
+import PricingPage from "/src/components/pages/PricingPage";
+import Setting from "/src/components/pages/Account/Setting";
+import ProductList from "/src/components/e-commerce/Products/ProductList";
+import ManageProduct from "/src/components/e-commerce/Products/ManageProduct";
+import ProfileOverview from "/src/components/pages/profile/ProfileOverview";
+import Teams from "/src/components/pages/profile/Teams";
+import AllProjects from "/src/components/pages/profile/AllProjects";
+import Reports from "/src/components/pages/user/Reports";
+import Newuser from "/src/components/pages/user/Newuser";
+import Charts from "/src/components/pages/Charts";
 import Kanban from "/src/components/Application/Kanban";
 import Wizard from "/src/components/Application/Wizard";
-import Overview from "/src/components/E-commerce/Products/Overview";
-import OrderList from "/src/components/E-commerce/Orders/OrderList";
-import OrderDetails from "/src/components/E-commerce/Orders/OrderDetails";
-import Billing from "/src/components/Pages/Account/Billing";
-import Invoice from "/src/components/Pages/Account/Invoice";
-import Security from "/src/components/Pages/Account/Security";
-import General from "/src/components/Pages/Projects/General";
-import TimeLine from "/src/components/Pages/Projects/TimeLine";
-import NewProject from "/src/components/Pages/Projects/NewProject";
-import Chat from "/src/components/Pages/Chat";
-import DataTables from "/src/components/Application/DataTables";
-import Calender from "/src/components/Application/Calender";
+import Overview from "/src/components/e-commerce/products/Overview";
+import OrderList from "/src/components/e-commerce/orders/OrderList";
+import OrderDetails from "/src/components/e-commerce/orders/OrderDetails";
+import Billing from "/src/components/pages/account/Billing";
+import Invoice from "/src/components/pages/account/Invoice";
+import Security from "/src/components/pages/account/Security";
+import General from "/src/components/pages/projects/General";
+import TimeLine from "/src/components/pages/projects/TimeLine";
+import NewProject from "/src/components/pages/projects/NewProject";
+import Chat from "/src/components/pages/Chat";
+import DataTables from "/src/components/application/DataTables";
+import Calender from "/src/components/application/Calender";
 
 function App() {
     return (
@@ -47,7 +47,7 @@ function App() {
                         element={<AllProjects />}
                     />
                     <Route path="/user/reports" element={<Reports />} />
-                    <Route path="/user/new-user" element={<NewUser />} />
+                    <Route path="/user/new-user" element={<Newuser />} />
                     <Route path="/account/setting" element={<Setting />} />
                     <Route path="/account/billing" element={<Billing />} />
                     <Route path="/account/invoice" element={<Invoice />} />

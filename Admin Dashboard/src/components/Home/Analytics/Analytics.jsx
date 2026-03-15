@@ -1,11 +1,11 @@
-import SalesFunnelChart from "./SalesFunnelChart";
+import SalesFunnelChart from "/src/components/Charts/SalesFunnelChart";
 import { dashboardData } from "../../../data/analytics";
 import { deviceCategoryData } from "../../../data/deviceCategoryData";
 import { topCountriesData } from "../../../data/topCountries";
-import WatchList from "./WatchList";
-
+import WatchList from "/src/components/Charts/WatchListChart";
 import MetricCard from "./MetricCard";
 import DataPanel from "./DataPanel";
+
 export default function Analytics() {
     const metricCardsArray = dashboardData.map((data) => {
         return (
