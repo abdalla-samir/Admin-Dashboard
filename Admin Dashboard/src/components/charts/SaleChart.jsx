@@ -5,7 +5,6 @@ import {
     LineChart,
     Line,
     Tooltip,
-    Legend,
     CartesianGrid,
 } from "recharts";
 import { saleData } from "../../data/saleData";
@@ -13,14 +12,23 @@ import { saleData } from "../../data/saleData";
 export default function SaleChart() {
     return (
         <ResponsiveContainer width="100%" height={278}>
-            <LineChart data={saleData}>
+            <LineChart
+                data={saleData}
+                margin={{ top: 0, right: 0, left: -20, bottom: 5 }}
+            >
                 <XAxis
                     dataKey="age"
                     tickLine={false}
                     axisLine={false}
                     tickMargin={15}
                 />
-                <YAxis tickLine={false} axisLine={false} tickMargin={15} />
+                <YAxis
+                    type="number"
+                    ticks={[10, 20, 30, 40, 50]}
+                    tickLine={false}
+                    axisLine={false}
+                    tickMargin={15}
+                />
                 <Tooltip
                     content={({ active, payload, label }) => {
                         if (active && payload && payload.length) {

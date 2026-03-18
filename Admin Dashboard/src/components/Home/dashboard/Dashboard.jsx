@@ -2,16 +2,33 @@ import ActiveUser from "../../charts/ActiveUsers";
 import SaleChart from "../../charts/SaleChart";
 import Pages from "/src/assets/icons/pages.svg?react";
 import Wave from "/src/assets/icons/wave.svg?react";
+import KPICard from "./KPICard";
+import EarningsCard from "./EarningsCard";
+import EarningsByItems from "./EarningsByItems";
+import { kpiData } from "../../../data/kpiData";
+import { earningsData } from "../../../data/earningsData";
+import ImpressionChart from "../../charts/ImpressionChart";
 
 export default function Dashboard() {
+    const kpiCards = kpiData.map((data) => (
+        <KPICard
+            key={crypto.randomUUID()}
+            title={data.title}
+            value={data.value}
+            icon={data.icon}
+            bgColor={data.bgColor}
+            opacity={data.opacity}
+        />
+    ));
+
     return (
-        <div className="flex-1 grid lg:grid-cols-4 gap-6">
-            <div className="lg:col-span-3 flex flex-col gap-6">
+        <div className="flex-1 grid xl:grid-cols-4 gap-6">
+            <div className="xl:col-span-3 flex flex-col gap-6">
                 <div className="bg-white rounded p-5">
                     <h2 className="mb-6 text-text text-title-large">
                         Active users right now
                     </h2>
-                    <div className="flex max-md:flex-col text-text gap-6">
+                    <div className="flex max-lg:flex-col text-text gap-6">
                         <div className="">
                             <div className="flex flex-col items-center border-b border-border">
                                 <span className="text-primary text-7xl">
@@ -33,6 +50,9 @@ export default function Dashboard() {
                             <ActiveUser />
                         </div>
                     </div>
+                    <div className="flex max-lg:flex-col my-4 gap-6">
+                        {kpiCards}
+                    </div>
                 </div>
                 <div className="bg-white flex-1 p-5">
                     <h2 className="mb-6 text-text text-title-large flex justify-between">
@@ -46,9 +66,13 @@ export default function Dashboard() {
                 </div>
             </div>
             <div className="col-span-1 flex flex-col gap-6">
-                <div className="bg-white">one</div>
-                <div className="bg-white">two</div>
-                <div className="bg-white">three</div>
+                <EarningsCard
+                    amount={earningsData.amount}
+                    currency={earningsData.currency}
+                    note={earningsData.note}
+                />
+                <EarningsByItems />
+                <ImpressionChart />
             </div>
         </div>
     );

@@ -12,7 +12,12 @@ import { activeUsers } from "../../data/activeUsers";
 export default function ActiveUser() {
     return (
         <ResponsiveContainer width="100%" height={278}>
-            <BarChart data={activeUsers} barSize={4} barGap={20}>
+            <BarChart
+                data={activeUsers}
+                barSize={4}
+                barGap={20}
+                margin={{ top: 25, right: 25, left: 0, bottom: 0 }}
+            >
                 <XAxis dataKey="time" axisLine={false} tick={false} />
                 <YAxis
                     axisLine={false}
