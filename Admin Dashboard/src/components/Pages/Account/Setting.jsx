@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Google from "/src/assets/icons/google_label.svg?react";
 import DownloadIcon from "/src/assets/icons/download.svg?react";
+import Heading from "../../Heading";
 
 export default function Setting() {
     const [inputs, setInputs] = useState({
@@ -58,11 +59,11 @@ export default function Setting() {
     };
     return (
         <div className="flex-1 flex flex-col">
-            <h1 className="text-heading-large">Setting Details</h1>
-            <p className="text-body-small text-text-light">
-                Update your photo and personal details here.
-            </p>
-            <div className="flex-1 mt-4 grid lg:grid-cols-[2fr_1fr] md:grid-cols-1 gap-5">
+            <Heading
+                heading="Setting Details"
+                description="Update your photo and personal details here."
+            />
+            <div className="flex-1 grid lg:grid-cols-[2fr_1fr] md:grid-cols-1 gap-5">
                 <div className="bg-white shadow rounded flex flex-col ">
                     <h1 className="border-b border-border p-4 text-body-large">
                         Personal information

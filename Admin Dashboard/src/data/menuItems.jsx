@@ -91,6 +91,47 @@ export const menu = [
                     },
                 ],
             },
+            {
+                id: "account",
+                label: "Account",
+                root: false,
+                parent: true,
+                child: false,
+                children: [
+                    {
+                        id: "setting",
+                        label: "Setting",
+                        path: "/account/setting",
+                        root: false,
+                        parent: false,
+                        leaf: true,
+                    },
+                    {
+                        id: "billing",
+                        label: "Billing",
+                        path: "/account/billing",
+                        root: false,
+                        parent: false,
+                        leaf: true,
+                    },
+                    {
+                        id: "invoice",
+                        label: "Invoice",
+                        path: "/account/invoice",
+                        root: false,
+                        parent: false,
+                        leaf: true,
+                    },
+                    {
+                        id: "security",
+                        label: "Security",
+                        path: "/account/security",
+                        root: false,
+                        parent: false,
+                        leaf: true,
+                    },
+                ],
+            },
 
             {
                 id: "pricingPage",
@@ -160,14 +201,6 @@ export const menu = [
         parent: true,
         child: false,
         children: [
-            {
-                id: "overview",
-                label: "Overview",
-                path: "/e-commerce/overview",
-                root: false,
-                parent: false,
-                leaf: true,
-            },
             {
                 id: "products",
                 label: "Products",

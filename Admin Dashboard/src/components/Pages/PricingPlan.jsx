@@ -2,11 +2,13 @@ import EmptyCheckbox from "/src/assets/icons/empty_checkbox.svg?react";
 import CheckedCheckbox from "/src/assets/icons/checked_checkbox.svg?react";
 
 export default function PricingPlan({
-    heading,
+    name,
     description,
-    planState,
+    buttonText,
     features,
 }) {
+    console.log(features);
+    console.log(buttonText);
     const featureLists = features.map((feature) => {
         return (
             <li className="flex items-center gap-5" key={feature.id}>
@@ -21,12 +23,12 @@ export default function PricingPlan({
     });
     return (
         <div className="bg-neutral p-6">
-            <h1 className="text-heading-large">{heading}</h1>
+            <h1 className="text-heading-large">{name}</h1>
             <p className="text-body-small text-text-light">{description}</p>
             <button
-                className={`border  w-full p-2 my-4 rounded ${planState === "Current Plan" ? "border-border text-text-light cursor-not-allowed" : "bg-primary hover:bg-primary-hover text-white cursor-pointer"}`}
+                className={`border  w-full p-2 my-4 rounded ${buttonText === "Current Plan" ? "border-border text-text-light cursor-not-allowed" : "bg-primary hover:bg-primary-hover text-white cursor-pointer"}`}
             >
-                {planState}
+                {buttonText}
             </button>
             <ul className="flex flex-col gap-4">{featureLists}</ul>
         </div>
