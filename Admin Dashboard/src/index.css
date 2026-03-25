@@ -94,12 +94,12 @@
     .line {
         @apply flex-1 bg-surface-muted h-0.5 mx-2;
     }
-    .btn {
-        @apply px-6 py-1 bg-primary hover:bg-primary-hover transition text-white rounded cursor-pointer;
-    }
 }
 
 @layer components {
+    .btn {
+        @apply px-4 py-1 bg-primary hover:bg-primary-hover transition text-white rounded cursor-pointer;
+    }
     .input {
         @apply block mt-2 bg-surface  placeholder:text-text-light text-text w-full p-3 rounded-md outline-none border border-border;
     }
