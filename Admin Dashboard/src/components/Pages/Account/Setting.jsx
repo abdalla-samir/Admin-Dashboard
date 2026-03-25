@@ -63,13 +63,13 @@ export default function Setting() {
                 heading="Setting Details"
                 description="Update your photo and personal details here."
             />
-            <div className="flex-1 grid lg:grid-cols-[2fr_1fr] md:grid-cols-1 gap-5">
+            <div className="flex-1 grid lg:grid-cols-[3fr_1fr]  gap-6">
                 <div className="bg-white shadow rounded flex flex-col ">
                     <h1 className="border-b border-border p-4 text-body-large">
                         Personal information
                     </h1>
                     <form onSubmit={handleSaveForm}>
-                        <div className="p-4 flex-1 grid lg:grid-cols-2 md:grid-cols-1 gap-5">
+                        <div className="p-4 flex-1 grid lg:grid-cols-2 md:grid-cols-1 gap-6">
                             <label className="input-label text-body-medium">
                                 Full Name
                                 <input
@@ -260,7 +260,7 @@ export default function Setting() {
                                     </span>
                                 </div>
                             </div>
-                            <label className="border-2 border-dashed border-primary  w-full h-50 mt-4 flex justify-center items-center">
+                            <label className="cursor-pointer p-2 border-2 border-dashed border-primary  w-full h-50 mt-4 flex justify-center items-center">
                                 <div className="flex flex-col gap-2 justify-center items-center">
                                     <DownloadIcon width={50} />
                                     <p className="text-center text-body-medium">

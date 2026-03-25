@@ -19,7 +19,7 @@ export default function Billing() {
     };
     const billing = billingData.map((data) => {
         return (
-            <tr className="text-body-medium">
+            <tr className="text-body-medium" key={crypto.randomUUID()}>
                 <td className="table-data-cell text-text flex items-center gap-3">
                     <PDF />
                     <span>{data.invoice}</span>
@@ -29,7 +29,7 @@ export default function Billing() {
                 <td className="table-data-cell">$ {data.amount.toFixed(2)}</td>
                 <td className="table-data-cell">{data.plan} Plan</td>
                 <td className="table-data-cell">{data.users}</td>
-                <td className="flex justify-end mr-4">
+                <td className="table-data-cell flex justify-end mr-4">
                     <button className="btn bg-text text-body-small">
                         Download all
                     </button>
@@ -42,16 +42,24 @@ export default function Billing() {
             <Heading
                 heading="Plans and billing"
                 description="Manage your plan and billing details"
+                size={{ head: "large", description: "small" }}
+                margin="4"
             />
+
             <div className="flex-1 flex flex-col gap-6">
                 <div className="grid lg:grid-cols-2 gap-6">
                     <div className=" bg-white p-4 rounded relative flex flex-col">
                         <div className="flex-1">
-                            <div className="flex max-md:flex-col justify-between items-center">
-                                <div>
+                            <div className="flex max-md:flex-col max-md:text-center max-md:mb-3 justify-between items-center">
+                                <div className="max-md:mb-3">
                                     <Heading
                                         heading={`${plans[0].name} plan`}
                                         description="Our most popular plan for small teams."
+                                        size={{
+                                            head: "large",
+                                            description: "small",
+                                        }}
+                                        margin="0"
                                     />
                                 </div>
                                 <div>
@@ -63,7 +71,7 @@ export default function Billing() {
                                     </span>
                                 </div>
                             </div>
-                            <div className="flex justify-center my-2">
+                            <div className="flex max-md:justify-center my-2 max-md:my-4">
                                 <Profile_One className="not-first:-ml-2" />
                                 <Profile_Two className="not-first:-ml-2" />
                                 <Profile_Three className="not-first:-ml-2" />
@@ -72,18 +80,22 @@ export default function Billing() {
                                 <Profile_Six className="not-first:-ml-2" />
                             </div>
                         </div>
-                        <Link
-                            to="/pricing-page"
-                            className="flex items-center gap-2 ml-auto w-fit cursor-pointer text-body-medium text-primary"
-                        >
-                            Upgrade Now
-                            <Arrow width={12} />
-                        </Link>
+                        <div className="flex md:justify-end max-md:justify-center">
+                            <Link
+                                to="/pricing-page"
+                                className="flex items-center gap-2 w-fit cursor-pointer text-body-medium text-primary"
+                            >
+                                Upgrade Now
+                                <Arrow width={12} />
+                            </Link>
+                        </div>
                     </div>
                     <div className=" bg-white flex-1 p-4 rounded">
                         <Heading
                             heading="Payment method"
                             description="Change how you pay for your plan."
+                            margin="4"
+                            size={{ head: "medium", description: "small" }}
                         />
                         <div className="shadow p-4 flex max-md:flex-col max-md:text-center items-center gap-4">
                             <Visa />
@@ -111,6 +123,8 @@ export default function Billing() {
                             <Heading
                                 heading="Billing history"
                                 description="Download your previous plan receipts and usage details."
+                                size={{ head: "large", description: "small" }}
+                                margin="4"
                             />
                             <button className="btn text-body-small">
                                 Download all
@@ -119,13 +133,23 @@ export default function Billing() {
                         <div className="overflow-scroll h-96 ">
                             <table className="w-full rounded min-w-4xl">
                                 <thead className="border-y border-border">
-                                    <th className="table-head-cell">Billing</th>
-                                    <th className="table-head-cell">
-                                        Billing Date
-                                    </th>
-                                    <th className="table-head-cell">Amount</th>
-                                    <th className="table-head-cell">Plan</th>
-                                    <th className="table-head-cell">Users</th>
+                                    <tr>
+                                        <th className="table-head-cell">
+                                            Billing
+                                        </th>
+                                        <th className="table-head-cell">
+                                            Billing Date
+                                        </th>
+                                        <th className="table-head-cell">
+                                            Amount
+                                        </th>
+                                        <th className="table-head-cell">
+                                            Plan
+                                        </th>
+                                        <th className="table-head-cell">
+                                            Users
+                                        </th>
+                                    </tr>
                                 </thead>
                                 <tbody className="">{billing}</tbody>
                             </table>

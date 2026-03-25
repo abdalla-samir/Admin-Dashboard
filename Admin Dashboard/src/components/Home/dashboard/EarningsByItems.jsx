@@ -6,10 +6,10 @@ export default function EarningsByItems() {
         <button className="flex items-center cursor-pointer shadow p-2">
             {data.icon}
             <div className=" flex-1 text-start ml-2">
-                <span className="block text-title-medium text-text ">
+                <span className="block text-title-small text-text ">
                     {data.title}
                 </span>
-                <span className="text-title-small text-text-light">
+                <span className="text-body-medium text-text-light">
                     {data.type}
                 </span>
             </div>
