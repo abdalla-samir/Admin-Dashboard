@@ -177,7 +177,7 @@ export default function Setting() {
                                     onChange={handleChange}
                                     required
                                     placeholder="Enter your bio"
-                                    className="input  resize-none h-20"
+                                    className="input resize-none h-20"
                                 />
                             </label>
                             <label className="input-label text-body-medium ">

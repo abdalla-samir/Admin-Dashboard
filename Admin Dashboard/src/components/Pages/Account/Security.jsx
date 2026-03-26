@@ -74,7 +74,7 @@ export default function Security() {
                             />
                         </label>
                         <label className="input-label text-body-medium">
-                            Current password
+                            Confirm password
                             <input
                                 name="confirmPassword"
                                 value={inputs.confirmPassword}
@@ -132,6 +132,7 @@ export default function Security() {
                             description="The Last Pass password generator creates random 
 passwords based on parameters set by you."
                             size={{ head: "large", description: "small" }}
+                            margin="4"
                         />
                         <button className="btn text-body-small">
                             Sign out from all devices

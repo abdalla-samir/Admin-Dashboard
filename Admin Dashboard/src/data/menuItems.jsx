@@ -134,6 +134,39 @@ export const menu = [
             },
 
             {
+                id: "projects",
+                label: "Projects",
+                root: false,
+                parent: true,
+                child: false,
+                children: [
+                    {
+                        id: "general",
+                        label: "General",
+                        path: "/projects/general",
+                        root: false,
+                        parent: false,
+                        leaf: true,
+                    },
+                    {
+                        id: "timeLine",
+                        label: "TimeLine",
+                        path: "/projects/time-line",
+                        root: false,
+                        parent: false,
+                        leaf: true,
+                    },
+                    {
+                        id: "newProject",
+                        label: "New Project",
+                        path: "/projects/new-project",
+                        root: false,
+                        parent: false,
+                        leaf: true,
+                    },
+                ],
+            },
+            {
                 id: "pricingPage",
                 label: "Pricing Page",
                 path: "/pricing-page",
