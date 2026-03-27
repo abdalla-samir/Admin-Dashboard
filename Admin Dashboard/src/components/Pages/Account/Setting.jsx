@@ -62,6 +62,8 @@ export default function Setting() {
             <Heading
                 heading="Setting Details"
                 description="Update your photo and personal details here."
+                size={{ head: "large", description: "small" }}
+                margin="4"
             />
             <div className="flex-1 grid lg:grid-cols-[3fr_1fr]  gap-6">
                 <div className="bg-white shadow rounded flex flex-col ">

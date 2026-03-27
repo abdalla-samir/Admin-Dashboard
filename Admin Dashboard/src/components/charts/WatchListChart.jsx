@@ -15,7 +15,7 @@ export default function WatchListChart() {
             <ResponsiveContainer width="100%" height={278}>
                 <LineChart
                     data={watchlistData}
-                    margin={{ top: 0, right: 0, left: -20, bottom: 5 }}
+                    margin={{ top: 20, right: 35, bottom: 20, left: 20 }}
                 >
                     <CartesianGrid strokeDasharray="" vertical={false} />
                     <XAxis

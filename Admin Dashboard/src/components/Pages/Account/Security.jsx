@@ -38,8 +38,8 @@ export default function Security() {
         );
     });
     return (
-        <div className="flex-1 gap-6 flex flex-col">
-            <h1>Security Setting</h1>
+        <div className="flex-1 gap-4 flex flex-col">
+            <h1 className="text-heading-medium">Security Setting</h1>
             <div className="flex-1 grid xl:grid-cols-[3fr_1fr] gap-6">
                 <div className="bg-white p-6 flex flex-col gap-3 rounded">
                     <Heading

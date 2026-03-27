@@ -13,10 +13,7 @@ export default function SideBar() {
         return activeLink ? activeLink : "dashboard";
     });
     const [, setPageLabel] = useContext(PageLabelContext);
-    const [openMenus, setOpenMenus] = useState(() => {
-        const menuList = window.localStorage.getItem("openMenus");
-        return menuList ? JSON.parse(menuList) : [];
-    });
+    const [openMenus, setOpenMenus] = useState(() => []);
     const [showToggleMenu, setShowToggleMenu] = useState(
         () => window.matchMedia("(max-width: 768px)").matches,
     );
@@ -57,6 +54,7 @@ export default function SideBar() {
             mediaQuery.removeEventListener("change", handleResize);
         };
     }, []);
+
     return (
         <>
             <div className="bg-neutral shadow flex flex-col z-50">
@@ -75,7 +73,7 @@ export default function SideBar() {
                         <img src={Logo} alt="logo" className={``} />
                     </Link>
                     <ul
-                        className={`px-2 flex-1 text-body-medium overflow-scroll text-text`}
+                        className={`px-3 flex-1 text-body-medium overflow-scroll text-text`}
                     >
                         {menuList}
                     </ul>

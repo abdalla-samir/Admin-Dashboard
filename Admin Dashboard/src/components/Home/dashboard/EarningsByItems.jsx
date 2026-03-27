@@ -3,7 +3,10 @@ import Arrow from "/src/assets/icons/arrow.svg?react";
 
 export default function EarningsByItems() {
     const earningsByItemsArray = earningsByItem.map((data) => (
-        <button className="flex items-center cursor-pointer shadow p-2">
+        <button
+            className="flex items-center cursor-pointer shadow p-2"
+            key={crypto.randomUUID()}
+        >
             {data.icon}
             <div className=" flex-1 text-start ml-2">
                 <span className="block text-title-small text-text ">
