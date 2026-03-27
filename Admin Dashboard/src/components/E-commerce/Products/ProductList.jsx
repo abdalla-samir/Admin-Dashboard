@@ -43,7 +43,7 @@ export default function ProductList() {
         );
     });
     return (
-        <div className="flex-1 p-4 bg-white rounded shadow overflow-scroll">
+        <div className="overflow bg-white rounded shadow overflow">
             <table className=" w-full rounded min-w-4xl">
                 <thead className="p-4">
                     <tr>

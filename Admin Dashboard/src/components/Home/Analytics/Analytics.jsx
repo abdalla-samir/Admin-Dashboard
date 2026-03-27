@@ -41,7 +41,7 @@ export default function Analytics() {
         );
     });
     return (
-        <div className="grid gap-6">
+        <div className="overflow grid gap-6">
             <div className="grid lg:grid-cols-4 md:grid-cols-2 justify-stretch  gap-4 p-5 bg-white">
                 {metricCardsArray}
             </div>

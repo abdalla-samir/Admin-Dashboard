@@ -20,7 +20,7 @@ export default function NewProject() {
     };
 
     return (
-        <div className="flex-1  p-6 bg-white rounded shadow">
+        <div className="overflow border border-border w-full p-6 bg-white rounded shadow">
             <Heading
                 heading="New project"
                 description="Create new project"
@@ -30,7 +30,7 @@ export default function NewProject() {
             <form onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-6">
                     <div className="grid md:grid-cols-2 gap-6">
-                        <label className="flex-1">
+                        <label className="flex-1 text-body-medium">
                             Project Name
                             <input
                                 type="text"
@@ -46,7 +46,7 @@ export default function NewProject() {
                                 className="input"
                             />
                         </label>
-                        <label className="flex-1">
+                        <label className="flex-1 text-body-medium">
                             Project Title
                             <input
                                 type="text"
@@ -64,7 +64,7 @@ export default function NewProject() {
                         </label>
                     </div>
                     <div className="grid md:grid-cols-2 gap-6">
-                        <label>
+                        <label className="text-body-medium">
                             Project Tags
                             <Select
                                 isMulti
@@ -110,7 +110,10 @@ export default function NewProject() {
                                     }),
                                 }}
                                 options={[
-                                    { value: "frontend", label: "Frontend" },
+                                    {
+                                        value: "frontend",
+                                        label: "Frontend",
+                                    },
                                     { value: "backend", label: "Backend" },
                                     { value: "design", label: "Design" },
                                 ]}
@@ -118,7 +121,7 @@ export default function NewProject() {
                         </label>
                     </div>
                     <div className="grid md:grid-cols-2 gap-6">
-                        <label className="flex flex-col">
+                        <label className="flex flex-col text-body-medium">
                             Start Date
                             <DatePicker
                                 className=" input"
@@ -130,7 +133,7 @@ export default function NewProject() {
                                 onChange={(date) => setStartDate(date)}
                             />
                         </label>
-                        <label className="flex flex-col">
+                        <label className="flex flex-col text-body-medium">
                             End Date
                             <DatePicker
                                 className=" input"
@@ -148,7 +151,7 @@ export default function NewProject() {
                         <span className="text-body-large text-text">
                             Starting File
                         </span>
-                        <label className="cursor-pointer p-2 border-2 border-dashed border-primary  w-full h-50 mt-4 flex justify-center items-center">
+                        <label className="cursor-pointer p-2 border-2 border-dashed border-primary  w-full h-50 mt-4 flex justify-center items-center text-body-medium">
                             <div className="flex flex-col gap-2 justify-center items-center">
                                 <DownloadIcon width={50} />
                                 <p className="text-center text-body-medium">

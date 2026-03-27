@@ -22,7 +22,7 @@ export default function Dashboard() {
     ));
 
     return (
-        <div className="flex-1 grid xl:grid-cols-4 gap-6">
+        <div className="overflow flex-1 grid xl:grid-cols-4 gap-6">
             <div className="xl:col-span-3 flex flex-col gap-6">
                 <div className="bg-white rounded p-5">
                     <h2 className="mb-6 text-text text-title-large">
@@ -65,7 +65,7 @@ export default function Dashboard() {
                     <SaleChart />
                 </div>
             </div>
-            <div className="col-span-1 flex flex-col gap-6">
+            <div className="flex flex-col gap-6">
                 <EarningsCard
                     amount={earningsData.amount}
                     currency={earningsData.currency}

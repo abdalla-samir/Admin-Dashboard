@@ -7,7 +7,7 @@ export default function DashboardHeader() {
     const [searchInput, setSearchInput] = useState("");
     const [activeLink] = useContext(ActiveLinkContext);
     return (
-        <div className="z-10 sticky top-0 flex items-center justify-between  gap-4 flex-wrap max-sm:flex-col max-sm:justify-center shadow p-4 bg-white">
+        <div className="sticky z-10 top-0 flex items-center justify-between  gap-4 flex-wrap max-sm:flex-col max-sm:justify-center shadow p-4 bg-white">
             <span className="text-primary text-heading-large sm:w-55 inline-block">
                 {activeLink}
             </span>

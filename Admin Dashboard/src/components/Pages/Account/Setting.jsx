@@ -58,14 +58,14 @@ export default function Setting() {
         }
     };
     return (
-        <div className="flex-1 flex flex-col">
+        <div className="h-full flex flex-col">
             <Heading
                 heading="Setting Details"
                 description="Update your photo and personal details here."
                 size={{ head: "large", description: "small" }}
                 margin="4"
             />
-            <div className="flex-1 grid lg:grid-cols-[3fr_1fr]  gap-6">
+            <div className="overflow flex-1 grid lg:grid-cols-[3fr_1fr]  gap-6">
                 <div className="bg-white shadow rounded flex flex-col ">
                     <h1 className="border-b border-border p-4 text-body-large">
                         Personal information
