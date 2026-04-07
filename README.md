@@ -1,5 +1,1 @@
-# Admin-Dashboard
-## This project is currently under development
-### This repository will contain all updates and new features related to the Admin Dashboard project. Stay tuned for upcoming updates.
-#### Made with 🤎
-#### Comeback Tomorrow
+# This project is currently paused and not yet complete. The development was stopped due to unfinished requirements and will be resumed in the future when possible.
